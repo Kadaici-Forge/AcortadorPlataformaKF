@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Hacker</title>
+<style>
+  body {
+    background-image: url('https://i.imgur.com/2NO3mU6.jpg'); /* Fondo de montaña */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0f0;
+    text-align: center;
+    padding-top: 100px;
+    animation: flicker 1s infinite alternate;
+  }
+  h1 {
+    font-size: 36px;
+    text-shadow: 3px 3px #ff0;
+  }
+  input[type="password"] {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #0f0;
+    background-color: #000;
+    color: #0f0;
+    font-size: 16px;
+    letter-spacing: 3px;
+    outline: none;
+  }
+  input[type="submit"] {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0f0;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    outline: none;
+  }
+
+  @keyframes flicker {
+    0%, 74%, 100% {
+      opacity: 1;
+      text-shadow: 0px 0px 10px #ff0, 0px 0px 20px #ff0, 0px 0px 30px #ff0;
+    }
+    75%, 99% {
+      opacity: 0.7;
+      text-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+<h1>Bienvenido a la Terminal Hacker</h1>
+<form id="passwordForm">
+  <input type="password" id="passwordInput" placeholder="Introduce la contraseña...">
+  <br>
+  <input type="submit" value="Acceder">
+</form>
+
+<script>
+document.getElementById("passwordForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var password = document.getElementById("passwordInput").value;
+  if (password === "Forge") {
+    window.location.href = "http://tinyurl.com/PlataformaKF";
+  } else {
+    alert("Contraseña incorrecta. Intenta de nuevo.");
+  }
+});
+</script>
+</body>
+</html>
